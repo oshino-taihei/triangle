@@ -33,17 +33,9 @@ describe "三角形ではない" do
   specify { expect(Triangle.view_shape(0,5,5)).to eq "三角形じゃないです＞＜" }
   specify { expect(Triangle.view_shape(5,0,5)).to eq "三角形じゃないです＞＜" }
   specify { expect(Triangle.view_shape(5,5,0)).to eq "三角形じゃないです＞＜" }
-  specify { expect(Triangle.view_shape()).to eq "三角形じゃないです＞＜" }
-  specify { expect(Triangle.view_shape(1)).to eq "三角形じゃないです＞＜" }
-  specify { expect(Triangle.view_shape(1,2)).to eq "三角形じゃないです＞＜" }
-  specify { expect(Triangle.view_shape(1,2,3,4)).to eq "三角形じゃないです＞＜" }
 
   specify { expect(Triangle.view_shape(0,0,0)).to eq "三角形じゃないです＞＜" }
-
   specify { expect(Triangle.view_shape(-1,1,2)).to eq "三角形じゃないです＞＜" }
-
-  specify { expect(Triangle.view_shape(1,2)).to eq "三角形じゃないです＞＜" }
-  specify { expect(Triangle.view_shape(1,2,3,4)).to eq "三角形じゃないです＞＜" }
-
   specify { expect(Triangle.view_shape("a","a","a")).to eq "三角形じゃないです＞＜" }
 end
+

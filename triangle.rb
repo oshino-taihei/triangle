@@ -1,38 +1,25 @@
 class Triangle
+  EQ_TRIANGLE = "正三角形ですね！"
+  ISO_TRIANGLE = "二等辺三角形ですね！"
+  TRIANGLE = "不等辺三角形ですね！"
+  NOT_TRIANGLE = "三角形じゃないです＞＜"
   def self.view_shape(s1, s2, s3)
     # 辺の長さで昇順にソートしておく
     sides = [s1, s2, s3].map!(&:to_i).sort
 
     # 最大辺の長さ >= その他2辺の和 であれば三角形ではない
-    return not_triangle if (sides[2] >= sides[0] + sides[1])
+    return NOT_TRIANGLE if (sides[2] >= sides[0] + sides[1])
 
     # 3辺が全て等しければ正三角形
     if (sides[0] == sides[1] && sides[1] == sides[2])
-      return eq_triangle
+      return EQ_TRIANGLE
     # 2辺が等しければ二等辺三角形
     elsif (sides[0] == sides[1] || sides[1] == sides[2])
-      return iso_triangle
+      return ISO_TRIANGLE
     # 上記いずれでもなければ不等辺三角形
     else
-      return triangle
+      return TRIANGLE
     end
-  end
-
-  private
-  def self.eq_triangle
-    "正三角形ですね！"
-  end
-
-  def self.iso_triangle
-    "二等辺三角形ですね！"
-  end
-
-  def self.triangle
-    "不等辺三角形ですね！"
-  end
-
-  def self.not_triangle
-    "三角形じゃないです＞＜"
   end
 end
 
