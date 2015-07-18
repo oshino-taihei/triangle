@@ -1,13 +1,7 @@
 class Triangle
-  def self.view_shape(sides)
-    # 引数の数が3でなければ三角形ではない
-    return not_triangle unless sides.size == 3
-
-    # 引数に0以下の数値が含まれていれば三角形ではない 
-    return not_triangle if sides.select{|e| e <= 0}.size > 0
-
+  def self.view_shape(s1, s2, s3)
     # 辺の長さで昇順にソートしておく
-    sides.sort!
+    sides = [s1, s2, s3].map!(&:to_i).sort
 
     # 最大辺の長さ >= その他2辺の和 であれば三角形ではない
     return not_triangle if (sides[2] >= sides[0] + sides[1])
@@ -43,6 +37,8 @@ class Triangle
 end
 
 ### MAIN ###
-sides = ARGV.join.split.map(&:to_i)
-puts Triangle.view_shape(sides)
+if (ARGV.size > 0)
+  sides = ARGV.join.split(',').map(&:to_i)
+  puts Triangle.view_shape(sides[0], sides[1], sides[2])
+end
 
