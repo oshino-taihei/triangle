@@ -20,7 +20,7 @@ $ ruby triangle.rb 1, 2, 3
 ```
 $ git clone https://github.com/oshino-taihei/triangle.git
 $ gem install bundler
-$ ruby local 2.1.1
+$ rbenv local 2.1.1
 $ bundle install
 ```
 
